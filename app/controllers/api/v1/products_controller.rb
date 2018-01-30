@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ProductsController < ApplicationController
+    class Api::V1::ProductsController < ApplicationController
       protect_from_forgery with: :null_session
       def index
         @products = Product.all
@@ -13,7 +13,6 @@ module Api
           render json: product, status: 202
         else
           render json: { errors: product.errors }, status: 422
-
         end
       end
 
