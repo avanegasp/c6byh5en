@@ -10,7 +10,7 @@ module Api
           "created_at"=> "#{product.created_at}",
           "updated_at"=> "#{product.updated_at}"}
         end
-        render :json => string
+        render json: @products
       end
     end
   end
