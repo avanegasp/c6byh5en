@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-    get 'products'
+      resources :products
+    end
   end
-end
+
+#   namespace :api do
+#     get 'v1/v1'
+#   end
+#
+#   namespace :api do
+#     namespace :v1 do
+#     get 'products'
+#   end
+# end
 
   resources :products
 
