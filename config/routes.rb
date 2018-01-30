@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'v1/products'
+  end
+
   resources :products
 
-  get "/api/v1/products", to: "products#index2", as: "api_v1"
+
+  # get "/api/v1/products", to: "v1#index2", as: "api_v1"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
