@@ -20,7 +20,7 @@ module Api
         @product = Product.find(params[:id])
         if(products_params[:name] && products_params[:price])
           @product.update(products_params)
-          render json: @product, status: 201
+          render json: @product, status: 200
         else
           puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
           render json: @product, status: 422
