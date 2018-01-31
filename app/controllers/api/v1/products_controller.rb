@@ -18,12 +18,12 @@ module Api
 
       def update
         @product = Product.find(params[:id])
-        if(products_params[:name] && products_params[:price])
+        if(products_params[:name].present? && products_params[:price].present?)
           @product.update(products_params)
           render json: @product, status: 200
         else
           puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-          render json: @product, status: 422
+          render json: {errors:"Error 422"}, status: 422
       end
     end
 
